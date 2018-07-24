@@ -24,3 +24,13 @@ AS
 select idChofer,nombre,apellido,dni,celular,Bus.placa as Bus from  chofer
 inner join Bus on Bus.idBus = Chofer.Bus_idBus
 GO
+
+
+create view ListarBoleta
+AS
+select idBoleto,Empresa.nombre as Nombre,Empresa.razonSocial as razon Social, 
+concat (Chofer.nombre,','chofer.apellido)as Chofer,concat( Pasajero.nombre,','Pasajero.apellido) 
+as Pasajero,fechaViaje,Asiento.tipoAsiento as 'Tipo de asiento' from BoletoDeViaje
+inner join Empresa on Empresa.idEmpresa = BoletoDeViaje.Empresa_idEmpresa 
+inner join Empresa on Empresa.idEmpresa = BoletoDeViaje.Empresa_idEmpresa 
+GO
