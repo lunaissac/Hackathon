@@ -1,11 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
+
         <?xml version='1.0' encoding='UTF-8' ?>
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml"
@@ -21,7 +14,7 @@
 
             </h:head>
 
-            <f:event type="preRenderView" listener="#{monitorController.listar()}"/>
+            <f:event type="preRenderView" listener="#{empresatorController.listar()}"/>
 
 
 
@@ -77,20 +70,15 @@
 
 
                                 <f:facet name="footer">
-                                    <p:commandButton value="Agregar" actionListener="#{empresaController.preparCI()}" oncomplete="PF('NewEmpresa').show();" update="NewAlu"/>
+                                    <p:commandButton value="Agregar" actionListener="#{empresaController.preparCI()}" oncomplete="PF('NewEmpresa').show();" update="Newempres"/>
                                     <p:commandButton value="Listar Activos " actionListener="#{empresaController.listar()}" update="form"/>
                                 </f:facet>
 
-                                <f:facet name="header">
-                                    <p:commandButton value="Monitores Activos" actionListener="#{empresaController.listar()}" update="form" />
-                                    <p:commandButton value="Monitores Inactivos" actionListener="#{empresaController.listar2()}" update="form"/>
-                                    <p:commandButton id="toggler" type="button" value="Columnas" icon="ui-icon-calculator" />
-                                    <p:columnToggler datasource="data" trigger="toggler" />
-                                </f:facet>
+                           
 
                             </p:dataTable>
                             <p:contextMenu for="data">
-                                <p:menuitem value="editar"  icon="ui-icon-search" oncomplete="PF('UpdateAlumno').show()" update="Updatealu" />
+                                <p:menuitem value="editar"  icon="ui-icon-search" oncomplete="PF('Updateempresa').show()"  />
                                 <p:menuitem value="Borrar"  icon="ui-icon-clear" update="data" actionListener="#{empresaController.delete()}"/>
                                 <p:menuitem value="activar"  icon="ui-icon-clear" update="data" actionListener="#{empresaController.activar()}"/>
                             </p:contextMenu>
@@ -103,13 +91,7 @@
                     </ui:define>
                 </ui:composition>  
             </h:body>
-        </html>
+  
 
-
-
-
-
-
-    </h:body>
 </html>
 
